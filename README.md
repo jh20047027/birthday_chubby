@@ -1,3 +1,4 @@
 # birthday-present
-基於python+flask框架寫的生日禮物web
+基于python+flask框架写的一个网页生日礼物
 
+[博客连接](https://blog.csdn.net/zyh960/article/details/107687945)

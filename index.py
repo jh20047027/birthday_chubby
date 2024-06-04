@@ -1,26 +1,14 @@
-# from flask import *
+from flask import Flask, request
 
+app = Flask(__name__)
 
-# app = Flask(__name__)
+@app.route('/1.html', methods=['POST'])
+def process_form():
+    account = request.form.get('account')
+    password = request.form.get('pwd')
+    print("Received account:", account)
+    print("Received password:", password)
+    return "Form submitted successfully!"
 
-# name = ''
-# login = ''
-# @app.route('/<int:id>', methods=['GET', 'POST'])
-# @app.route('/', methods=('GET', 'POST'))
-# def index(id=None):
-#     global name, login
-#     if request.method == 'POST':
-#         if request.form.get('account') == 'chubby' and request.form.get('pwd') == '861221':
-#             login = 'success'
-#             name = 'admin'
-#             return render_template('1.html', name=name, login=login)
-#         else:
-#             login = 'fail'
-#         if id ==520:
-#             return render_template('index.html')
-#         if id ==1314:
-#             return render_template('3.html')
-#     return render_template('hellow.html')
-
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
